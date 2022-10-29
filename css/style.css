@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+/* font-family: 'Raleway', sans-serif; */
+
+/* ******************** */
+/*  VARIABES  */
+/* ******************** */
+
+:root {
+    --Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+    --Pale-Blue: hsl(243, 100%, 93%);
+    --Grayish-Blue: hsl(229, 7%, 55%);
+    --Dark-Blue: hsl(228, 56%, 26%);
+    --Very-Dark-Blue: hsl(229, 57%, 11%);
+
+    --fs-para: 0.875rem;
+}
+
+
+
+/* ******************** */
+/*  RESET  */
+/* ******************** */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+
+/* ******************** */
+/*  GLOBAL */
+/* ******************** */
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: var(--fs-para);
+    color: var(--Pale-Blue);
+    background: url(../images/bg-mobile.png) no-repeat;
+    background-size: cover;
+    background-position: bottom right;
+    background-color: var(--Very-Dark-Blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ******************** */
+/*  LAYOUT */
+/* ******************** */
+
+.container {
+    max-width: 60rem;
+    margin: 2rem 2rem;
+    flex-grow: 1;
+}
+
+.content-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: 2s ease;
+}
+
+
+
+/* ******************** */
+/*  ICON-BOX */
+/* ******************** */
+
+.icon-wrap {
+    background-color: var(--Dark-Blue);
+    padding: 2.5rem;
+    border-radius: .7rem 6rem .7rem .7rem;
+}
+
+.icon-wrap .logo {
+    margin-bottom: 2rem;
+}
+
+.icon-wrap .icon-list {
+    list-style: none;
+    display: flex;
+    gap: .8rem;
+}
+
+.icon-wrap .icon-list li {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--Very-Dark-Blue);
+    border-radius: 7px;
+    display: grid;
+    place-items: center;
+}
+
+
+
+/* ******************** */
+/*  STORAGE-BOX */
+/* ******************** */
+
+.storage-wrap {
+    background-color: var(--Dark-Blue);
+    border-radius: 10px;
+    padding: 2rem 2rem 3rem;
+    position: relative;
+}
+
+.status-box .heading {
+    font-size: var(--fs-para);
+    font-weight: 400;
+    text-align: center;
+}
+
+.status-box .heading span {
+    font-weight: 700;
+}
+
+.status-box .status-bar {
+    width: 100%;
+    height: 1.2rem;
+    background-color: hsla(229, 57%, 11%, 0.5);
+    border-radius: 10px;
+    margin: 1rem 0 .5rem 0;
+    position: relative;
+}
+
+.status-box .status-bar::before {
+    content: "";
+    width: 75%;
+    height: .9rem;
+    position: absolute;
+    top: 50%;
+    left: .2rem;
+    background-image: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    border-radius: 10px;
+    transform: translateY(-50%);
+}
+
+.status-box .status-bar::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 50%;
+    right: 25%;
+    background-color: var(--Pale-Blue);
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.status-box .data-availability {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: .8rem;
+}
+
+.popup-box {
+    display: flex;
+    gap: 1rem;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem 2rem;
+    border-radius: 10px;
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    transition: 2s ease;
+}
+
+.popup-box p:first-child {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--Very-Dark-Blue);
+}
+
+.popup-box p:last-child {
+    font-size: .8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    width: max-content;
+    color: var(--Grayish-Blue);
+}
+
+.popup-box::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    transform: translate(0%, 50%);
+    z-index: -1;
+    transition: all 2s ease;
+    display: none;
+}
+
+
+
+
+/* ******************** */
+/*  MEDIA-QUERY */
+/* ******************** */
+
+@media screen and (min-width: 50rem) {
+    body {
+        background-image: url(../images/bg-desktop.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 0 130%;
+        background-attachment: fixed;
+    }
+    .content-wrap {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .icon-wrap {
+        flex-grow: 1;
+    }
+
+    .storage-wrap {
+        flex-grow: 3;
+        align-self: flex-end;
+        padding: 2rem;
+    }
+
+    .status-box .heading {
+        text-align: left;
+    }
+    
+    .popup-box {
+        bottom: 120%;
+        left: 60%;
+    }
+
+    .popup-box::after {
+        bottom: 0;
+        right: 30%;
+        display: block;
+    }
+
+}
+
+
+@media screen and (min-width: 60rem) {
+    .popup-box {
+        left: 77%;
+    }
+
+    .popup-box::after {
+        bottom: 0;
+        right: 0;
+    }
+
+}
+    
+
+
